@@ -47,8 +47,6 @@ AppAsset::register($this);
                     'url' => ['/site/logout'],
                     'linkOptions' => ['data-method' => 'post']
                 ],
-
-
         ],
     ]);
     NavBar::end();
