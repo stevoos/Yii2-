@@ -14,6 +14,7 @@ use yii\web\IdentityInterface;
  * @property string $email
  * @property string $password
  */
+
 class User extends \yii\db\ActiveRecord implements IdentityInterface
 {
     /**

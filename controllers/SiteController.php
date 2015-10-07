@@ -7,6 +7,7 @@ use yii\filters\AccessControl;
 use yii\web\Controller;
 use yii\filters\VerbFilter;
 use app\models\LoginForm;
+use app\models\SignupForm;
 use app\models\ContactForm;
 
 class SiteController extends Controller
@@ -34,6 +35,8 @@ class SiteController extends Controller
             ],
         ];
     }
+
+
 
     public function actions()
     {
@@ -64,6 +67,17 @@ class SiteController extends Controller
             return $this->goBack();
         }
         return $this->render('login', [
+            'model' => $model,
+        ]);
+    }
+
+    public function actionSignup()
+    {
+        $model = new SignupForm();
+        if ($model->load(Yii::$app->request->post())) {
+            return $this->goBack();
+        }
+        return $this->render('signup', [
             'model' => $model,
         ]);
     }
